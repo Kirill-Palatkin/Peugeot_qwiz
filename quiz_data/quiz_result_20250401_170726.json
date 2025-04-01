@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-04-01T17:07:26.241552",
+  "ip_address": "127.0.0.1",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+  "quiz_data": {
+    "lifestyle": [
+      "family"
+    ],
+    "conditions": [
+      "offroad"
+    ],
+    "importance": [
+      "comfort"
+    ],
+    "options": [
+      "remote_start"
+    ],
+    "colors": [
+      "rouge_elixir"
+    ],
+    "name": [
+      "1"
+    ],
+    "phone": [
+      "2"
+    ],
+    "email": [
+      "3"
+    ]
+  }
+}

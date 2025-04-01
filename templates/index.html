@@ -1,0 +1,176 @@
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Example PSA</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .question h2 {
+      font-size: 24px; /* Увеличенный размер текста вопроса */
+    }
+  </style>
+</head>
+<body>
+  <!-- Верхняя часть с информацией -->
+  <div class="info-section">
+    <div class="info-content">
+      <h1>Официально в России. Гарантия от производителя</h1>
+      <h2>Подберем наиболее подходящий кроссовер Peugeot под ваш запрос</h2>
+    </div>
+  </div>
+
+  <!-- Нижняя часть с квизом -->
+  <div class="quiz-section">
+    <div class="container">
+      <form action="/submit" method="POST">
+
+        <!-- Вопрос 1 -->
+        <div class="question">
+          <h2>Какой образ жизни вам ближе всего?</h2>
+          <label><input type="checkbox" name="lifestyle" value="active"> 🏙️ Активный городской стиль</label>
+          <label><input type="checkbox" name="lifestyle" value="nature"> 🚗 Частые поездки за город или на природу</label>
+          <label><input type="checkbox" name="lifestyle" value="long_trips"> 🏖️ Длинные поездки и путешествия</label>
+          <label><input type="checkbox" name="lifestyle" value="family"> 💼 Семья, дети, повседневные задачи</label>
+          <label><input type="checkbox" name="lifestyle" value="custom"> Свой вариант</label>
+          <div class="custom-input-container" style="display: none; margin-top: 10px;">
+            <input type="text" class="custom-input" placeholder="Укажите ваш вариант" data-for="lifestyle">
+          </div>
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="question">
+          <h2>Какие условия эксплуатации будущего автомобиля важны?</h2>
+          <label><input type="checkbox" name="conditions" value="bad_roads"> ⛈️ Снег, дождь, плохие дороги</label>
+          <label><input type="checkbox" name="conditions" value="city"> 🌞 Хороший асфальт, городские пробки</label>
+          <label><input type="checkbox" name="conditions" value="offroad"> ⛰️ Возможность съезжать с дороги, путешествия</label>
+          <label><input type="checkbox" name="conditions" value="family_transport"> 🏡 Удобство перевозки детей и вещей</label>
+          <label><input type="checkbox" name="conditions" value="custom"> Свой вариант</label>
+          <div class="custom-input-container" style="display: none; margin-top: 10px;">
+            <input type="text" class="custom-input" placeholder="Укажите ваш вариант" data-for="conditions">
+          </div>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="question">
+          <h2>Что для вас самое важное в автомобиле?</h2>
+          <label><input type="checkbox" name="importance" value="performance"> ⚡️ Динамика и скорость</label>
+          <label><input type="checkbox" name="importance" value="design"> 💎 Внешний вид</label>
+          <label><input type="checkbox" name="importance" value="comfort"> ☀ Комфорт</label>
+          <label><input type="checkbox" name="importance" value="economy"> 🔋 Экономичность</label>
+          <label><input type="checkbox" name="importance" value="safety"> 🛡️ Надежность и безопасность</label>
+          <label><input type="checkbox" name="importance" value="price"> 💰 Цена</label>
+          <label><input type="checkbox" name="importance" value="service"> 🔧 Простота обслуживания: наличие дилеров и запчастей</label>
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="question">
+          <h2>Какие опции в автомобиле вам интересны в первую очередь?</h2>
+          <label><input type="checkbox" name="options" value="comfortable_suspension"> Комфортная подвеска</label>
+          <label><input type="checkbox" name="options" value="panoramic_roof"> Панорамная крыша</label>
+          <label><input type="checkbox" name="options" value="high_quality_audio"> Качественный звук</label>
+          <label><input type="checkbox" name="options" value="adas"> Современные системы помощи водителю (ADAS)</label>
+          <label><input type="checkbox" name="options" value="quality_of_interior"> Качество отделочных материалов</label>
+          <label><input type="checkbox" name="options" value="remote_start"> Дистанционный запуск двигателя через приложение</label>
+          <label><input type="checkbox" name="options" value="touch_sensitive_buttons_and_classic_ergonomic_toggle_switches"> Сочетание сенсорных кнопок на экране и классических эргономичных переключателей в форме тумблеров</label>
+          <label><input type="checkbox" name="options" value="custom"> Свой вариант</label>
+          <div class="custom-input-container" style="display: none; margin-top: 10px;">
+            <input type="text" class="custom-input" placeholder="Укажите ваш вариант" data-for="options">
+          </div>
+        </div>
+
+        <!-- Вопрос 5: Цвета -->
+        <div class="question">
+          <h2>Какие цвета автомобиля предпочтете?</h2>
+          <div class="color-options">
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="blanc_banquize">
+              <div class="color-image-wrapper">
+                <img src="{{ url_for('static', filename='colors/9.png') }}" alt="Blanc Banquize">
+              </div>
+              <span>Белый Blanc Banquize</span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="blanc_nacre">
+              <div class="color-image-wrapper">
+                <img src="{{ url_for('static', filename='colors/8.png') }}" alt="Blanc Nacre">
+              </div>
+              <span>Белый перламутр Blanc Nacre</span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="orange_fusion">
+              <div class="color-image-wrapper">
+                <img src="{{ url_for('static', filename='colors/7.png') }}" alt="Orange Fusion">
+              </div>
+              <span>Оранжевый металлик Orange Fusion</span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="arense_grey">
+              <div class="color-image-wrapper">
+                <img src="{{ url_for('static', filename='colors/6.png') }}" alt="Arense Grey">
+              </div>
+              <span>Серый металлик Arense Grey</span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="gris_platinum">
+              <div class="color-image-wrapper">
+                <img src="{{ url_for('static', filename='colors/5.png') }}" alt="Gris Platinum">
+              </div>
+              <span>Серый металлик Gris Platinum</span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="obsession_blue">
+              <div class="color-image-wrapper">
+                <img src="{{ url_for('static', filename='colors/4.png') }}" alt="Obsession Blue">
+              </div>
+              <span>Изумрудно-синий Obsession Blue</span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="rouge_elixir">
+              <div class="color-image-wrapper">
+                <img src="{{ url_for('static', filename='colors/3.png') }}" alt="Rouge Elixir">
+              </div>
+              <span>Красный металлик Rouge Elixir</span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="noir_perla_nera">
+              <div class="color-image-wrapper">
+                <img src="{{ url_for('static', filename='colors/2.png') }}" alt="Noir Perla Nera">
+              </div>
+              <span>Черный металлик Noir Perla Nera</span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="nimbus_grey">
+              <div class="color-image-wrapper">
+                <img src="{{ url_for('static', filename='colors/1.png') }}" alt="Nimbus Grey">
+              </div>
+              <span>Серый металлик Nimbus Grey</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Контактная информация -->
+        <div class="question">
+          <h2>Отлично! Почти готово. Укажите, пожалуйста, свои данные, чтобы мы могли связаться с вами и помочь с выбором автомобиля мечты</h2>
+          <label for="name">Имя:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="phone">Номер телефона:</label>
+          <input type="tel" id="phone" name="phone" required>
+
+          <label for="email">Ваш email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="button-container">
+          <button type="button" id="back-btn" style="display: none;">Назад</button>
+          <button type="button" id="next-btn">Далее</button>
+        </div>
+<!--        <button type="button" id="back-btn" style="display: none;">Назад</button>-->
+<!--        <button type="button" id="next-btn">Далее</button>-->
+      </form>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

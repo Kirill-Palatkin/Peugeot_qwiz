@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-04-01T17:08:26.027680",
+  "ip_address": "127.0.0.1",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+  "quiz_data": {
+    "lifestyle": [
+      "custom"
+    ],
+    "conditions": [
+      "custom"
+    ],
+    "importance": [
+      "economy",
+      "safety"
+    ],
+    "options": [
+      "custom"
+    ],
+    "colors": [
+      "rouge_elixir",
+      "noir_perla_nera",
+      "nimbus_grey"
+    ],
+    "name": [
+      "1"
+    ],
+    "phone": [
+      "2"
+    ],
+    "email": [
+      "3"
+    ],
+    "custom_lifestyle": [
+      "1"
+    ],
+    "custom_conditions": [
+      "2"
+    ],
+    "custom_options": [
+      "3"
+    ]
+  }
+}
